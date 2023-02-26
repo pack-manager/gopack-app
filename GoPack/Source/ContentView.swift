@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  GoPack
-//
-//  Created by Matheus Evangelista on 25/02/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {

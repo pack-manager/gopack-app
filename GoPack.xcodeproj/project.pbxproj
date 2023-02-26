@@ -51,10 +51,9 @@
 		6DE096CB29AAE74600497874 /* GoPack */ = {
 			isa = PBXGroup;
 			children = (
-				6DE096CC29AAE74600497874 /* GoPackApp.swift */,
-				6DE096CE29AAE74600497874 /* ContentView.swift */,
-				6DE096D029AAE74900497874 /* Assets.xcassets */,
 				6DE096D229AAE74900497874 /* Preview Content */,
+				6DE096DA29AAEC7D00497874 /* Resource */,
+				6DE096DB29AAECC400497874 /* Source */,
 			);
 			path = GoPack;
 			sourceTree = "<group>";
@@ -65,6 +64,39 @@
 				6DE096D329AAE74900497874 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6DE096DA29AAEC7D00497874 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6DE096DD29AAED3300497874 /* Assets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		6DE096DB29AAECC400497874 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6DE096CE29AAE74600497874 /* ContentView.swift */,
+				6DE096DC29AAED0A00497874 /* App */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		6DE096DC29AAED0A00497874 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6DE096CC29AAE74600497874 /* GoPackApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6DE096DD29AAED3300497874 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6DE096D029AAE74900497874 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
