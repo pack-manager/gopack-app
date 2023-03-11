@@ -4,7 +4,7 @@ import SwiftUI
 struct GoPackApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SignInViewFactory.create()
         }
     }
 }
