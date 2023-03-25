@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct SignInView: View {
-
-    @StateObject var viewModel = SignInViewModel()
+    
+    @StateObject var viewModel: SignInViewModel
     var interactor: SignInInteractorProtocol?
     
     var body: some View {
@@ -12,8 +12,11 @@ struct SignInView: View {
                     Spacer()
                     appName
                     Spacer().frame(height: 40)
-                    emailField
-                    passwordField
+                    VStack(spacing: 20) {
+                        emailField
+                        passwordField
+                    }
+                    Spacer().frame(height: 25)
                     signInButton
                     Spacer()
                     registerLink
@@ -55,7 +58,7 @@ private extension SignInView {
     
     var signInButton: some View {
         LoadingButtonView(
-            action: {},
+            action: { },
             buttonTitle: "Entrar",
             showProgress: viewModel.uiState == UIState.loading,
             disabled: viewModel.isSignButtonDisabled
@@ -69,7 +72,7 @@ private extension SignInView {
             
             NavigationLink(
                 "Realize seu cadastro",
-                destination: EmptyView()
+                destination: SignUpViewFactory.create()
             )
         }
     }
@@ -78,7 +81,7 @@ private extension SignInView {
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
-            SignInView()
+            SignInView(viewModel: SignInViewModel())
                 .preferredColorScheme($0)
         }
     }

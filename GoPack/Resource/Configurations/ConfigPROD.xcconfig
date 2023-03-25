@@ -1,0 +1,2 @@
+// Endpoints
+ENDPOINT_USER_MICROSERVICE=http:/$()/localhost:8000

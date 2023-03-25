@@ -14,7 +14,7 @@ struct InputFieldView: View {
         VStack(alignment: .leading) {
             renderTextOrSecureField()
             renderOptionalLabel()
-        }.padding(.bottom, 10)
+        }
     }
 }
 

@@ -1,10 +1,11 @@
 import SwiftUI
 
-enum SignInViewFactory {
+struct SignInViewFactory {
     static func create() -> some View {
         let presenter = SignInPresenter()
         let interactor = SignInInteractor()
-        var view = SignInView()
+        let viewModel = SignInViewModel()
+        var view = SignInView(viewModel: viewModel)
         
         interactor.presenter = presenter
         view.interactor = interactor

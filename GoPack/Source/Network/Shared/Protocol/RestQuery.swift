@@ -23,5 +23,6 @@ extension RestQuery {
             .appendingHttpMethod(method)
             .appendingHttpBody(body)
             .appendingHeaders(headers)
+            .appendingValues()
     }
 }

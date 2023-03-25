@@ -3,20 +3,44 @@ import Foundation
 protocol NetworkProtocol {
     typealias NetworkCompletion<T> = (Result<T, NetworkError>) -> Void
     
-    func call<T: RestQuery, U: Decodable>(_ query: T, _ decodable: U.Type) async -> Result<U, NetworkError>
+    func call<X: RestQuery, Y: Codable>(_ query: X, _ body: Y) async throws
+    func callWithResponse<T: RestQuery, U: Codable>(_ query: T, _ body: U) async throws -> U
 }
 
 final class Network: NetworkProtocol {
     static var shared: NetworkProtocol = Network()
     
-    func call<T: RestQuery, U: Decodable>(_ query: T, _ decodable: U.Type) async -> Result<U, NetworkError> {
-        let urlRequest = query.asURLRequest()
+    func call<X: RestQuery, Y: Codable>(_ query: X, _ body: Y) async throws {
+        var urlRequest = query.asURLRequest()
         
         do {
-            let (data, _) = try await URLSession.shared.data(for: urlRequest)
-            return handle(data)
+            urlRequest.httpBody = try enconde(value: body)
+            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+            guard let response = response as? HTTPURLResponse else {
+                throw NetworkError.unknown
+            }
+            switch response.statusCode {
+            case 200...299: break
+            case 400...422, 522:
+                let errorMessage: String = try decode(data)
+                throw NetworkError.detail(errorMessage)
+            default:
+                throw NetworkError.unknown
+            }
         } catch {
-            return .failure(.detail(error.localizedDescription))
+            throw error
+        }
+    }
+    
+    func callWithResponse<T: RestQuery, U: Codable>(_ query: T, _ body: U) async throws -> U {
+        var urlRequest = query.asURLRequest()
+        
+        do {
+            urlRequest.httpBody = try enconde(value: body)
+            let (data, _) = try await URLSession.shared.data(for: urlRequest)
+            return try decode(data)
+        } catch let error {
+            throw error
         }
     }
 }

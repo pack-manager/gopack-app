@@ -8,19 +8,6 @@ enum NetworkError: Error {
     case unknown
 }
 
-extension NetworkProtocol {
-    func handle<U: Decodable>(_ data: Data?) -> Result<U, NetworkError> {
-        guard let data else { return .failure(.dataNotFound) }
-        
-        do {
-            let decoded = try JSONDecoder().decode(U.self, from: data)
-            return .success(decoded)
-        } catch let decodeError {
-            return .failure(.decodeFailure(decodeError.localizedDescription))
-        }
-    }
-}
-
 extension NetworkError: CustomStringConvertible {
     var description: String {
         switch self {
@@ -30,6 +17,26 @@ extension NetworkError: CustomStringConvertible {
         case let .detail(detail): return "Error Detail: \(detail)"
         default:
             return "Unknown error"
+        }
+    }
+}
+
+extension NetworkProtocol {
+    func enconde<T: Encodable>(value: T) throws -> Data {
+        do {
+            return try JSONEncoder().encode(value)
+        } catch {
+            throw NetworkError.detail("Erro ao codificar JSON: \(error.localizedDescription)")
+        }
+    }
+    
+    func decode<U: Decodable>(_ data: Data?) throws -> U {
+        guard let data else { throw NetworkError.dataNotFound }
+        
+        do {
+            return try JSONDecoder().decode(U.self, from: data)
+        } catch let decodeError {
+            throw NetworkError.decodeFailure(decodeError.localizedDescription)
         }
     }
 }

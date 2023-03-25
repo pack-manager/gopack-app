@@ -23,4 +23,11 @@ extension URLRequest {
         }
         return urlRequest
     }
+    
+    func appendingValues() -> URLRequest {
+        var urlRequest = self
+        urlRequest.setValue("application/json", forHTTPHeaderField: "accept")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "content-Type")
+        return urlRequest
+    }
 }
