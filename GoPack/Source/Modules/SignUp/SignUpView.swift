@@ -15,7 +15,7 @@ struct SignUpView: View {
             renderOptionalErrorMessage
             
             if case UIState.success = viewModel.uiState {
-                PackagesView()
+                MainViewFactory.create()
             } else {
                 VStack {
                     Spacer()

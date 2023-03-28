@@ -15,7 +15,7 @@ struct SignInView: View {
             renderOptionalErrorMessage
             
             if case UIState.success = viewModel.uiState {
-                PackagesView()
+                MainViewFactory.create()
             } else {
                 content
             }

@@ -1,10 +1,3 @@
-//
-//  PackagesView.swift
-//  GoPack
-//
-//  Created by Matheus Evangelista on 16/03/23.
-//
-
 import SwiftUI
 
 struct PackagesView: View {

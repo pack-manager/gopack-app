@@ -18,6 +18,7 @@
 		6D2DB71B29D10C00002537C3 /* UserSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DB71A29D10C00002537C3 /* UserSignIn.swift */; };
 		6D2DB71D29D10F95002537C3 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DB71C29D10F95002537C3 /* SignInRequest.swift */; };
 		6D649B1429C7DA5500A44F23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D649B1329C7DA5500A44F23 /* User.swift */; };
+		6D9076ED29D2702500D23B41 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9076EC29D2702500D23B41 /* MainView.swift */; };
 		6DAB121B29BAC156005CFAE1 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB121A29BAC156005CFAE1 /* SignInViewModel.swift */; };
 		6DAB121D29BC02E7005CFAE1 /* SignInViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB121C29BC02E7005CFAE1 /* SignInViewFactory.swift */; };
 		6DAB122229BCCC1F005CFAE1 /* RestQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB122129BCCC1F005CFAE1 /* RestQuery.swift */; };
@@ -35,6 +36,8 @@
 		6DAF92CE29BE18BC00C13ECC /* UserWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF92CD29BE18BC00C13ECC /* UserWorker.swift */; };
 		6DAF92D029BE1B0700C13ECC /* UserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF92CF29BE1B0700C13ECC /* UserQuery.swift */; };
 		6DAF92D529BE1F7C00C13ECC /* AppProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF92D429BE1F7C00C13ECC /* AppProperty.swift */; };
+		6DC7D42729D38DC300EC4E45 /* MainViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7D42629D38DC300EC4E45 /* MainViewFactory.swift */; };
+		6DC7D42929D38EAD00EC4E45 /* PackagesViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7D42829D38EAD00EC4E45 /* PackagesViewFactory.swift */; };
 		6DE096CD29AAE74600497874 /* GoPackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE096CC29AAE74600497874 /* GoPackApp.swift */; };
 		6DE096D129AAE74900497874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE096D029AAE74900497874 /* Assets.xcassets */; };
 		6DE096D429AAE74900497874 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE096D329AAE74900497874 /* Preview Assets.xcassets */; };
@@ -52,6 +55,7 @@
 		6D2DB71A29D10C00002537C3 /* UserSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignIn.swift; sourceTree = "<group>"; };
 		6D2DB71C29D10F95002537C3 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		6D649B1329C7DA5500A44F23 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6D9076EC29D2702500D23B41 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6DAB121A29BAC156005CFAE1 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		6DAB121C29BC02E7005CFAE1 /* SignInViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewFactory.swift; sourceTree = "<group>"; };
 		6DAB122129BCCC1F005CFAE1 /* RestQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestQuery.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 		6DAF92CF29BE1B0700C13ECC /* UserQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuery.swift; sourceTree = "<group>"; };
 		6DAF92D229BE1BB900C13ECC /* ConfigPROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigPROD.xcconfig; sourceTree = "<group>"; };
 		6DAF92D429BE1F7C00C13ECC /* AppProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProperty.swift; sourceTree = "<group>"; };
+		6DC7D42629D38DC300EC4E45 /* MainViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewFactory.swift; sourceTree = "<group>"; };
+		6DC7D42829D38EAD00EC4E45 /* PackagesViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewFactory.swift; sourceTree = "<group>"; };
 		6DE096C929AAE74600497874 /* GoPack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoPack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE096CC29AAE74600497874 /* GoPackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPackApp.swift; sourceTree = "<group>"; };
 		6DE096D029AAE74900497874 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				6D19529F29C3AACA005C599F /* PackagesView.swift */,
+				6DC7D42829D38EAD00EC4E45 /* PackagesViewFactory.swift */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 		6D1BA5F729AD5DA4007DB4E7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6D9076EB29D26FBF00D23B41 /* Main */,
 				6D19529E29C3AA66005C599F /* Packages */,
 				6D1BA5EE29AD582A007DB4E7 /* SignIn */,
 				6DAB122F29BD03CA005CFAE1 /* SignUp */,
@@ -176,6 +184,15 @@
 				6D649B1329C7DA5500A44F23 /* User.swift */,
 			);
 			path = Codable;
+			sourceTree = "<group>";
+		};
+		6D9076EB29D26FBF00D23B41 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6DC7D42629D38DC300EC4E45 /* MainViewFactory.swift */,
+				6D9076EC29D2702500D23B41 /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		6DAB121829BAC131005CFAE1 /* Model */ = {
@@ -418,13 +435,16 @@
 				6DAB122529BCCC73005CFAE1 /* HTTPMethod.swift in Sources */,
 				6DAF92D529BE1F7C00C13ECC /* AppProperty.swift in Sources */,
 				6D649B1429C7DA5500A44F23 /* User.swift in Sources */,
+				6DC7D42929D38EAD00EC4E45 /* PackagesViewFactory.swift in Sources */,
 				6DE096CD29AAE74600497874 /* GoPackApp.swift in Sources */,
 				6D1BA5F429AD5919007DB4E7 /* SignInPresenter.swift in Sources */,
 				6DAB121D29BC02E7005CFAE1 /* SignInViewFactory.swift in Sources */,
 				6DAB122C29BCD268005CFAE1 /* Network.swift in Sources */,
 				6DAB123429BD0413005CFAE1 /* SignUpViewFactory.swift in Sources */,
+				6DC7D42729D38DC300EC4E45 /* MainViewFactory.swift in Sources */,
 				6DAF92CE29BE18BC00C13ECC /* UserWorker.swift in Sources */,
 				6DAB122229BCCC1F005CFAE1 /* RestQuery.swift in Sources */,
+				6D9076ED29D2702500D23B41 /* MainView.swift in Sources */,
 				6D1BA5F629AD5B07007DB4E7 /* SignInView.swift in Sources */,
 				6D2DB71B29D10C00002537C3 /* UserSignIn.swift in Sources */,
 				6D1952A029C3AACA005C599F /* PackagesView.swift in Sources */,
