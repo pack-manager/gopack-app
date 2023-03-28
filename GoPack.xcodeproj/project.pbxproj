@@ -15,6 +15,8 @@
 		6D1BA5FE29AD6D8E007DB4E7 /* InputTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BA5FD29AD6D8E007DB4E7 /* InputTextFieldView.swift */; };
 		6D1BA60129AD6F44007DB4E7 /* CustomInputFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BA60029AD6F44007DB4E7 /* CustomInputFieldStyle.swift */; };
 		6D1BA60429AD7305007DB4E7 /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BA60329AD7305007DB4E7 /* LoadingButtonView.swift */; };
+		6D2DB71B29D10C00002537C3 /* UserSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DB71A29D10C00002537C3 /* UserSignIn.swift */; };
+		6D2DB71D29D10F95002537C3 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DB71C29D10F95002537C3 /* SignInRequest.swift */; };
 		6D649B1429C7DA5500A44F23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D649B1329C7DA5500A44F23 /* User.swift */; };
 		6DAB121B29BAC156005CFAE1 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB121A29BAC156005CFAE1 /* SignInViewModel.swift */; };
 		6DAB121D29BC02E7005CFAE1 /* SignInViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB121C29BC02E7005CFAE1 /* SignInViewFactory.swift */; };
@@ -47,6 +49,8 @@
 		6D1BA5FD29AD6D8E007DB4E7 /* InputTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextFieldView.swift; sourceTree = "<group>"; };
 		6D1BA60029AD6F44007DB4E7 /* CustomInputFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputFieldStyle.swift; sourceTree = "<group>"; };
 		6D1BA60329AD7305007DB4E7 /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
+		6D2DB71A29D10C00002537C3 /* UserSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignIn.swift; sourceTree = "<group>"; };
+		6D2DB71C29D10F95002537C3 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		6D649B1329C7DA5500A44F23 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6DAB121A29BAC156005CFAE1 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		6DAB121C29BC02E7005CFAE1 /* SignInViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewFactory.swift; sourceTree = "<group>"; };
@@ -158,6 +162,14 @@
 			path = LoadingButton;
 			sourceTree = "<group>";
 		};
+		6D2DB71929D10B9A002537C3 /* Encodable */ = {
+			isa = PBXGroup;
+			children = (
+				6D2DB71A29D10C00002537C3 /* UserSignIn.swift */,
+			);
+			path = Encodable;
+			sourceTree = "<group>";
+		};
 		6D649B1229C7DA3B00A44F23 /* Codable */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				6DAB121A29BAC156005CFAE1 /* SignInViewModel.swift */,
+				6D2DB71C29D10F95002537C3 /* SignInRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +192,7 @@
 			children = (
 				6DAB122B29BCD268005CFAE1 /* Network.swift */,
 				6D649B1229C7DA3B00A44F23 /* Codable */,
+				6D2DB71929D10B9A002537C3 /* Encodable */,
 				6DAB121F29BCCC06005CFAE1 /* Shared */,
 			);
 			path = Network;
@@ -412,6 +426,7 @@
 				6DAF92CE29BE18BC00C13ECC /* UserWorker.swift in Sources */,
 				6DAB122229BCCC1F005CFAE1 /* RestQuery.swift in Sources */,
 				6D1BA5F629AD5B07007DB4E7 /* SignInView.swift in Sources */,
+				6D2DB71B29D10C00002537C3 /* UserSignIn.swift in Sources */,
 				6D1952A029C3AACA005C599F /* PackagesView.swift in Sources */,
 				6DAB121B29BAC156005CFAE1 /* SignInViewModel.swift in Sources */,
 				6DAB122829BCCDAA005CFAE1 /* URL+Extension.swift in Sources */,
@@ -423,6 +438,7 @@
 				6D1BA60129AD6F44007DB4E7 /* CustomInputFieldStyle.swift in Sources */,
 				6DAF92CB29BE17B200C13ECC /* SignUpRequest.swift in Sources */,
 				6DAB123829BD0451005CFAE1 /* SignUpInteractor.swift in Sources */,
+				6D2DB71D29D10F95002537C3 /* SignInRequest.swift in Sources */,
 				6D1BA5FE29AD6D8E007DB4E7 /* InputTextFieldView.swift in Sources */,
 				6DAF92D029BE1B0700C13ECC /* UserQuery.swift in Sources */,
 			);

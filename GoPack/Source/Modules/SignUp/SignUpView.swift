@@ -85,7 +85,7 @@ private extension SignUpView {
             Text("")
                 .alert(isPresented: .constant(true)) {
                     Alert(
-                        title: Text("VenturaHR"),
+                        title: Text("GoPack"),
                         message: Text(value),
                         dismissButton: defaultAlertButton
                     )

@@ -1,37 +1,29 @@
 import SwiftUI
 
+protocol SignInViewViewDisplayLogicProtocol {
+    func successfullyLoggedIn()
+    func loginFailed(errorMessage: String)
+}
+
 struct SignInView: View {
     
-    @StateObject var viewModel: SignInViewModel
+    @ObservedObject var viewModel: SignInViewModel
     var interactor: SignInInteractorProtocol?
     
     var body: some View {
-        VStack {
-            NavigationView {
-                VStack {
-                    Spacer()
-                    appName
-                    Spacer().frame(height: 40)
-                    VStack(spacing: 20) {
-                        emailField
-                        passwordField
-                    }
-                    Spacer().frame(height: 25)
-                    signInButton
-                    Spacer()
-                    registerLink
-                    Spacer().frame(height: 40)
-                    
-                }
-                .padding(.horizontal, 32)
-                .navigationTitle("Login")
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarHidden(viewModel.navigationBarHidden)
+        ZStack {
+            renderOptionalErrorMessage
+            
+            if case UIState.success = viewModel.uiState {
+                PackagesView()
+            } else {
+                content
             }
         }
     }
 }
 
+// MARK: - UI ELEMENT
 private extension SignInView {
     var appName: some View {
         Text("GoPack")
@@ -58,7 +50,7 @@ private extension SignInView {
     
     var signInButton: some View {
         LoadingButtonView(
-            action: { },
+            action: handleSignIn,
             buttonTitle: "Entrar",
             showProgress: viewModel.uiState == UIState.loading,
             disabled: viewModel.isSignButtonDisabled
@@ -76,8 +68,77 @@ private extension SignInView {
             )
         }
     }
+    
+    var content: some View {
+        VStack {
+            NavigationView {
+                VStack {
+                    Spacer()
+                    appName
+                    Spacer().frame(height: 40)
+                    VStack(spacing: 20) {
+                        emailField
+                        passwordField
+                    }
+                    Spacer().frame(height: 25)
+                    signInButton
+                    Spacer()
+                    registerLink
+                    Spacer().frame(height: 40)
+                    
+                }
+                .padding(.horizontal, 32)
+                .navigationTitle("Login")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarHidden(viewModel.navigationBarHidden)
+            }
+        }
+    }
+    
+    var defaultAlertButton: Alert.Button {
+        .default(Text("Ok"), action: { viewModel.uiState = .none })
+    }
+    
+    @ViewBuilder var renderOptionalErrorMessage: some View {
+        if case UIState.error(let value) = viewModel.uiState {
+            Text("")
+                .alert(isPresented: .constant(true)) {
+                    Alert(
+                        title: Text("GoPack"),
+                        message: Text(value),
+                        dismissButton: defaultAlertButton
+                    )
+                }
+        }
+    }
 }
 
+// MARK: - REQUEST TO INTERACTOR
+extension SignInView {
+    func handleSignIn() {
+        Task {
+            viewModel.uiState = .loading
+            await interactor?.signIn(with: SignInRequest(email: viewModel.email, password: viewModel.password))
+        }
+    }
+}
+
+// MARK: - DISPLAY LOGIC EXTENSION
+extension SignInView: SignInViewViewDisplayLogicProtocol {
+    func successfullyLoggedIn() {
+        DispatchQueue.main.async {
+            viewModel.uiState = .success
+        }
+    }
+    
+    func loginFailed(errorMessage: String) {
+        DispatchQueue.main.async {
+            viewModel.uiState = .error(errorMessage)
+        }
+    }
+}
+
+// MARK: - PREVIEW
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
