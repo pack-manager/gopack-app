@@ -2,6 +2,7 @@ import Foundation
 
 enum AppProperty: String {
     case enpointUserMicroservice = "ENDPOINT_USER_MICROSERVICE"
+    case enpointPackMicroservice = "ENDPOINT_PACK_MICROSERVICE"
     
     var url: URL {
         guard let url = URL(string: AppProperty.get(value: rawValue)) else {

@@ -1,6 +1,15 @@
 import SwiftUI
 
+protocol PackagesViewDisplayLogicProtocol {
+    func didFetchPackages(packs: [Pack])
+    func didFailFetchPackages(errorMessage: String)
+}
+
 struct PackagesView: View {
+    
+    @ObservedObject var viewModel: PackagesViewModel
+    var interactor: PackagesInteractorProtocol?
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -69,9 +78,21 @@ private extension PackagesView {
     }
 }
 
+// MARK: - REQUEST TO INTERACTOR
+extension PackagesView {
+    func handleSignIn() {}
+}
+
+// MARK: - DISPLAY LOGIC EXTENSION
+extension PackagesView: PackagesViewDisplayLogicProtocol {
+    func didFetchPackages(packs: [Pack]) {}
+    
+    func didFailFetchPackages(errorMessage: String) {}
+}
+
 // MARK: - PREVIEW
 struct PackagesView_Previews: PreviewProvider {
     static var previews: some View {
-        PackagesView()
+        PackagesView(viewModel: PackagesViewModel())
     }
 }

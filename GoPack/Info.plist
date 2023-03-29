@@ -4,6 +4,8 @@
 <dict>
 	<key>App Properties</key>
 	<dict>
+		<key>ENDPOINT_PACK_MICROSERVICE</key>
+		<string>$(ENDPOINT_PACK_MICROSERVICE)</string>
 		<key>ENDPOINT_USER_MICROSERVICE</key>
 		<string>$(ENDPOINT_USER_MICROSERVICE)</string>
 	</dict>
