@@ -46,6 +46,7 @@
 		6DC7D42F29D3C1C900EC4E45 /* PackagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7D42E29D3C1C900EC4E45 /* PackagesViewModel.swift */; };
 		6DC7D43129D3C25000EC4E45 /* PackagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7D43029D3C25000EC4E45 /* PackagesInteractor.swift */; };
 		6DC7D43329D3C26200EC4E45 /* PackagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7D43229D3C26200EC4E45 /* PackagesPresenter.swift */; };
+		6DCF2BE529D6411D00FA6315 /* CurrentLoggedUserSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCF2BE429D6411D00FA6315 /* CurrentLoggedUserSync.swift */; };
 		6DE096CD29AAE74600497874 /* GoPackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE096CC29AAE74600497874 /* GoPackApp.swift */; };
 		6DE096D129AAE74900497874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE096D029AAE74900497874 /* Assets.xcassets */; };
 		6DE096D429AAE74900497874 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE096D329AAE74900497874 /* Preview Assets.xcassets */; };
@@ -92,6 +93,7 @@
 		6DC7D42E29D3C1C900EC4E45 /* PackagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesViewModel.swift; sourceTree = "<group>"; };
 		6DC7D43029D3C25000EC4E45 /* PackagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesInteractor.swift; sourceTree = "<group>"; };
 		6DC7D43229D3C26200EC4E45 /* PackagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesPresenter.swift; sourceTree = "<group>"; };
+		6DCF2BE429D6411D00FA6315 /* CurrentLoggedUserSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLoggedUserSync.swift; sourceTree = "<group>"; };
 		6DE096C929AAE74600497874 /* GoPack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoPack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE096CC29AAE74600497874 /* GoPackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPackApp.swift; sourceTree = "<group>"; };
 		6DE096D029AAE74900497874 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		6D1BA5F829AD5DD4007DB4E7 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				6DCF2BE329D63E7C00FA6315 /* Helper */,
 				6DAF92CC29BE189500C13ECC /* Worker */,
 				6D1BA5FC29AD6D65007DB4E7 /* UI Component */,
 				6D1BA5F929AD5E04007DB4E7 /* Enum */,
@@ -345,6 +348,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6DCF2BE329D63E7C00FA6315 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6DCF2BE429D6411D00FA6315 /* CurrentLoggedUserSync.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		6DE096C029AAE74600497874 = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +524,7 @@
 				6D4BD1A229D4F1420028A41C /* PackagesRequest.swift in Sources */,
 				6D1BA60429AD7305007DB4E7 /* LoadingButtonView.swift in Sources */,
 				6DAB123229BD03F8005CFAE1 /* SignUpView.swift in Sources */,
+				6DCF2BE529D6411D00FA6315 /* CurrentLoggedUserSync.swift in Sources */,
 				6D4BD1A029D4F0570028A41C /* Pack.swift in Sources */,
 				6D1BA5FB29AD5E16007DB4E7 /* UIState.swift in Sources */,
 				6DAB122A29BCD070005CFAE1 /* URLRequest+Extensions.swift in Sources */,

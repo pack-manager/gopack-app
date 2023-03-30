@@ -1,5 +1,5 @@
 protocol UserWorkerProtocol {
-    func registerUser(with request: User) async throws
+    func registerUser(with request: User) async throws -> User
     func signIn(with request: UserSignIn) async throws
 }
 
@@ -11,11 +11,11 @@ final class UserWorker: UserWorkerProtocol {
         self.network = network
     }
     
-    func registerUser(with request: User) async throws {
+    func registerUser(with request: User) async throws -> User {
         let query = UserQuery(useCase: .signUp)
         
         do {
-            try await network.call(query, request)
+            return try await network.callWithResponse(query, request)
         } catch  {
             throw error
         }
