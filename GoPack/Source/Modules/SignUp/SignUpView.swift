@@ -8,29 +8,26 @@ protocol SignUpViewDisplayLogicProtocol {
 struct SignUpView: View {
     
     @ObservedObject var viewModel: SignUpViewModel
+    @Binding var signInCanNavigateToMainView: Bool
     var interactor: SignUpInteractorProtocol?
     
     var body: some View {
         ZStack {
             renderOptionalErrorMessage
             
-            if case UIState.success = viewModel.uiState {
-                MainViewFactory.create()
-            } else {
-                VStack {
-                    Spacer()
-                    screenTitle
-                    VStack(alignment: .center, spacing: 20) {
-                        nameField
-                        emailField
-                        passwordField
-                    }
-                    Spacer().frame(height: 25)
-                    signUpButton
-                    Spacer()
+            VStack {
+                Spacer()
+                screenTitle
+                VStack(alignment: .center, spacing: 20) {
+                    nameField
+                    emailField
+                    passwordField
                 }
-                .padding(.horizontal, 32)
+                Spacer().frame(height: 25)
+                signUpButton
+                Spacer()
             }
+            .padding(.horizontal, 32)
         }
     }
 }
@@ -110,7 +107,7 @@ extension SignUpView {
 extension SignUpView: SignUpViewDisplayLogicProtocol {
     func didRegisterUser() {
         DispatchQueue.main.async {
-            viewModel.uiState = .success
+            signInCanNavigateToMainView = true
         }
     }
     
@@ -126,7 +123,7 @@ extension SignUpView: SignUpViewDisplayLogicProtocol {
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
-            SignUpView(viewModel: SignUpViewModel())
+            SignUpView(viewModel: SignUpViewModel(), signInCanNavigateToMainView: .constant(true))
                 .preferredColorScheme($0)
         }
     }

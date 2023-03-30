@@ -14,7 +14,7 @@ struct SignInView: View {
         ZStack {
             renderOptionalErrorMessage
             
-            if case UIState.success = viewModel.uiState {
+            if viewModel.shouldNavigateToMainView {
                 MainViewFactory.create()
             } else {
                 content
@@ -64,7 +64,7 @@ private extension SignInView {
             
             NavigationLink(
                 "Realize seu cadastro",
-                destination: SignUpViewFactory.create()
+                destination: SignUpViewFactory.create(signInCanNavigateToMainView: $viewModel.shouldNavigateToMainView)
             )
         }
     }
