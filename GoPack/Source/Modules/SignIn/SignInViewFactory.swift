@@ -4,7 +4,7 @@ struct SignInViewFactory {
     static func create() -> some View {
         let presenter = SignInPresenter()
         let userWorker = UserWorker(network: Network.shared)
-        let interactor = SignInInteractor(userWorker: userWorker)
+        let interactor = SignInInteractor(userWorker: userWorker, currentLoggedUserSync: CurrentLoggedUserSync.shared)
         let viewModel = SignInViewModel()
         var view = SignInView(viewModel: viewModel)
         
