@@ -5,7 +5,7 @@ protocol NetworkProtocol {
     
     func call<X: RestQuery, Y: Codable>(_ query: X, _ body: Y) async throws
     func callWithResponse<T: RestQuery, U: Decodable>(_ query: T, _ decodable: U.Type) async throws -> U
-    func callWithResponse<T: RestQuery, U: Codable>(_ query: T, _ body: U) async throws -> U
+    func callWithResponse<T: RestQuery, U: Codable, Y: Codable>(_ query: T, _ body: Y, _ decodable: U.Type) async throws -> U
 }
 
 final class Network: NetworkProtocol {
@@ -34,7 +34,7 @@ final class Network: NetworkProtocol {
     }
     
     func callWithResponse<T: RestQuery, U: Decodable>(_ query: T, _ decodable: U.Type) async throws -> U {
-        var urlRequest = query.asURLRequest()
+        let urlRequest = query.asURLRequest()
         
         do {
             let (data, _) = try await URLSession.shared.data(for: urlRequest)
@@ -44,7 +44,7 @@ final class Network: NetworkProtocol {
         }
     }
     
-    func callWithResponse<T: RestQuery, U: Codable>(_ query: T, _ body: U) async throws -> U {
+    func callWithResponse<T: RestQuery, U: Codable, Y: Codable>(_ query: T, _ body: Y, _ decodable: U.Type) async throws -> U {
         var urlRequest = query.asURLRequest()
         
         do {

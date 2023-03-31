@@ -127,7 +127,7 @@ extension SignInView {
 extension SignInView: SignInViewViewDisplayLogicProtocol {
     func successfullyLoggedIn() {
         DispatchQueue.main.async {
-            viewModel.uiState = .success
+            viewModel.shouldNavigateToMainView = true
         }
     }
     

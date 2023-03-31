@@ -15,7 +15,7 @@ final class UserWorker: UserWorkerProtocol {
         let query = UserQuery(useCase: .signUp)
         
         do {
-            return try await network.callWithResponse(query, request)
+            return try await network.callWithResponse(query, request, User.self)
         } catch  {
             throw error
         }

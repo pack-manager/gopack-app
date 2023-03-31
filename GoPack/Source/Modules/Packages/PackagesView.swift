@@ -36,6 +36,8 @@ struct PackagesView: View {
                 centerToolbarItem
                 trailingToolbarItem
             }
+        }.onAppear {
+            fetchPackages()
         }
     }
 }
@@ -67,7 +69,6 @@ private extension PackagesView {
                 Image(systemName: "plus")
                     .bold()
                     .foregroundColor(.orange)
-                    //.scaleEffect(1.5)
             }
             
             Text("GoPack")
@@ -80,7 +81,12 @@ private extension PackagesView {
 
 // MARK: - REQUEST TO INTERACTOR
 extension PackagesView {
-    func handleSignIn() {}
+    func fetchPackages() {
+        Task {
+            let response = await interactor?.fetchPacks(with: PackagesRequest(userId: viewModel.userId))
+            print(response)
+        }
+    }
 }
 
 // MARK: - DISPLAY LOGIC EXTENSION
